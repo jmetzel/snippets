@@ -1,0 +1,82 @@
+snippet aa
+	${1:dataset} <- ${1:dataset} %>% ${0}
+
+snippet am
+	${1:dataset} <- ${1:dataset} %>% mutate(${2:new} = ${3:cmd})
+
+snippet gg
+	ggplot(${1:data}, aes(${2:aes})) + 
+	  geom_${3:geom}()
+	  
+snippet sm
+	select(matches("${1:regex}"))
+
+snippet MP
+	TITLE:      ${1:title};
+	
+	DATA:       FILE IS ${2:datafile};
+	
+				VARIABLES ARE ${3:varnames};
+				
+				USEVARIABLES ARE ${4:usenames};
+				
+				MISSING ARE (${5: missing});
+				
+				IDVARIABLE IS ${6:varname};
+	
+				!CATEGORICAL ARE ;
+				
+				!USEOBSERVATIONS ARE ;
+				
+	ANALYSIS:   TYPE IS ${7:type};
+	
+				ESTIMATOR IS ${8:est};
+				
+				!ALGORITHM = INTEGRATION;
+				
+				PROCESSORS ARE 4;
+				
+	MODEL:      ${9:model};
+	
+	SAVEDATA:   ${10:savedata};
+	
+	OUTPUT:     ${11:output};
+				
+snippet MPML
+	TITLE:      ${1:title};
+	
+	DATA:       FILE IS ${2:datafile};
+	
+				VARIABLES ARE ${3:varnames};
+				
+				USEVARIABLES ARE ${4:usenames};
+				
+				MISSING ARE (${5: missing});
+				
+				IDVARIABLE IS ${6:varname};
+	
+				!CATEGORICAL ARE ;
+				
+				!USEOBSERVATIONS ARE ;
+				
+	ANALYSIS:   TYPE IS ${7:type};
+	
+				ESTIMATOR IS ${8:est};
+				
+				!ALGORITHM = INTEGRATION;
+				
+				PROCESSORS ARE 4;
+				
+	MODEL:      %WITHIN%      
+	            ${10:model within};
+	            
+	            %BETWEEN%
+	            ${11:model between};
+				
+	SAVEDATA:   ${12:savedata};
+	
+	OUTPUT:     ${13:output};
+				
+				
+
+
